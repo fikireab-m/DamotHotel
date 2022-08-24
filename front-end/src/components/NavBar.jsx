@@ -1,4 +1,3 @@
-import { Close, CloseFullscreen, Menu, MenuBook } from "@mui/icons-material";
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import { Spacer } from "./Spacer";
@@ -124,13 +123,13 @@ const NavBar = () => {
     <>
       <Toolbar>
         <IconButton onClick={onOpen}>
-          <Menu />
+          <h1>Menu</h1>
         </IconButton>
         <Drawer id="drawer-containerxaioek">
           <DrawerHeader>
             <Spacer grow="lg" />
             <CloseButton onClick={onClose}>
-              <Close color="error" />
+              <h1>X</h1>
             </CloseButton>
           </DrawerHeader>
           {navItems.map((item) => (
