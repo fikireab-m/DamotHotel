@@ -1,22 +1,20 @@
-import React, { useRef } from "react";
+import React from "react";
 import { GridContainer } from "../components/GridContainer";
 import { Card, CardFooter, CardActionBar, CardMedia } from "../components/Card";
 import { popularDishes } from "../data/popular";
 import { Button } from "../components/Buttons";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
 const PopularDishes = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
   return (
     <section>
       <GridContainer>
         {popularDishes.map((dish, index) => (
           <motion.div
-            initial={{ opacity: 0, y: 500 }}
+            initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            viewport={{once:true,amount:0.8}}
+            viewport={{once:true}}
           >
             <Card key={index}>
               <CardMedia src={dish.image} />

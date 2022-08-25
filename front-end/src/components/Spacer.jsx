@@ -5,15 +5,15 @@ export const Spacer = styled.div`
     switch (grow) {
       case "lg":
         return css`
-          flex-grow: 3;
+          flex-grow: 1;
         `;
       case "md":
         return css`
-          flex-grow: 2;
+          flex-grow: 0.5;
         `;
       default:
         return css`
-          flex-grow: 1;
+          flex-grow: 0.1;
         `;
     }
   }}

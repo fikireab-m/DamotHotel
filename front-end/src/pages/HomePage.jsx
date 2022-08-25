@@ -1,9 +1,8 @@
 import React from "react";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
-import ScrolAnimation from "../excercises/LayoutScroll";
 import BedRooms from "./BedRooms";
 import PopularDishes from "./PopularDishes";
-import { motion } from "framer-motion";
 
 const HomePage = () => {
   return (
@@ -11,7 +10,7 @@ const HomePage = () => {
       <Header />
       <PopularDishes />
       <BedRooms />
-      {/* <ScrolAnimation /> */}
+      <Footer />
     </React.Fragment>
   );
 };

@@ -4,12 +4,16 @@ import { Spacer } from "./Spacer";
 
 const Toolbar = styled.nav`
   border-radius: 1rem;
-  box-shadow: var(--blackShadow);
+  box-shadow: 0 5px 10px 0 var(--black);
   background-color: var(--black2);
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media screen and (max-width: 600px) {
+    padding: 1rem 1rem;
+    gap: 1rem;
+  }
 `;
 
 const MenuBar = styled.div`
@@ -26,8 +30,6 @@ const NavItem = styled.a`
   text-decoration: none;
   color: var(--white);
   text-transform: capitalize;
-  overflow: hidden;
-  font-size: 1.5rem;
   transition: all 0.5s;
   &:hover {
     color: var(--primary);
@@ -42,10 +44,8 @@ const NavItem = styled.a`
     top: 3rem;
     background-color: var(--primary);
     display: inline-block;
-  } */
-  @media screen and (max-width: 700px) {
-    font-size: 1rem;
   }
+  */
 `;
 
 const Logo = styled.img`
@@ -127,7 +127,6 @@ const NavBar = () => {
         </IconButton>
         <Drawer id="drawer-containerxaioek">
           <DrawerHeader>
-            <Spacer grow="lg" />
             <CloseButton onClick={onClose}>
               <h1>X</h1>
             </CloseButton>

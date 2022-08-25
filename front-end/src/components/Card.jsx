@@ -2,11 +2,16 @@ import styled from "styled-components";
 export const Card = styled.div`
   background-color: var(--white);
   border-radius: 0.5rem;
-  box-shadow: var(--blackShadow);
+  box-shadow: var(--lightShadow);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  transition: all 0.4s;
+  &:hover {
+    transform: translate(.5rem, -1rem);
+    box-shadow: var(--blackShadow);
+  }
 `;
 export const CardMedia = styled.img`
   width: 100%;

@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "./NavBar";
 import styled from "styled-components";
 import { Button } from "./Buttons";
+import { motion } from "framer-motion";
 
 const HeaderContainer = styled.div`
   height: 80vh;
@@ -23,6 +24,9 @@ const HeaderContainer = styled.div`
     @media screen and (max-width: 760px) {
       width: 100%;
       height: 95%;
+    }
+    @media screen and (max-width: 600px) {
+      padding: 0.5rem 1rem;
     }
   }
   @media screen and (max-width: 600px) {
@@ -54,22 +58,36 @@ const Title = styled.div`
     color: var(--primaryLight);
     font-family: "Nova Flat", Courier, monospace;
     margin-bottom: 3rem;
+  @media screen and (max-width: 600px) {
+    padding-left: 1rem;
+    }
   }
+  @media screen and (max-width: 600px) {
+      margin-left: -1rem;
+    }
 `;
 const Header = () => {
   return (
     <HeaderContainer>
       <div>
         <NavBar />
+
         <Content>
-          <div>
-            <Title>
-              <h1>Make your travel confortabel.</h1>
-            </Title>
-          </div>
-          <Button variant="outlined" size="large">
-            Book Now
-          </Button>
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <div>
+              <Title>
+                <h1>Make your travel confortabel.</h1>
+              </Title>
+            </div>
+            <Button variant="outlined" size="large">
+              Book Now
+            </Button>
+          </motion.div>
         </Content>
       </div>
     </HeaderContainer>
