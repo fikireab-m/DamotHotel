@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import styled, { css } from "styled-components";
+import React from "react";
+import styled from "styled-components";
 import { Spacer } from "./Spacer";
+import { MdClose, MdMenu } from "react-icons/md";
 
 const Toolbar = styled.nav`
   border-radius: 1rem;
@@ -123,12 +124,12 @@ const NavBar = () => {
     <>
       <Toolbar>
         <IconButton onClick={onOpen}>
-          <h1>Menu</h1>
+          <MdMenu size={"2rem"} />
         </IconButton>
         <Drawer id="drawer-containerxaioek">
           <DrawerHeader>
             <CloseButton onClick={onClose}>
-              <h1>X</h1>
+              <MdClose size={"2rem"} color="red" />
             </CloseButton>
           </DrawerHeader>
           {navItems.map((item) => (
