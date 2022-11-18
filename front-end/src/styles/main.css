@@ -1,7 +1,7 @@
 :root {
     --primary: #00b6b6;
     --primaryLight: #3effff;
-    --secondary: #b21f9e;
+    --secondary: #830071;
     --darkGrey: #4b4b4b;
     --grey: #777777;
     --lightGrey: #9c9c9c;
@@ -9,6 +9,7 @@
     --black2: #242424;
     --black3: #505050;
     --white: #ffffff;
+    --white1: #dddddd;
 
     --borderPrimary: 1px solid var(--primary);
     --primaryround: 0 0 5px 5px rgb(0, 182, 182, 0.5);

@@ -1,6 +1,9 @@
 import styled, { css } from "styled-components";
 
 export const Button = styled.button`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   ${(prop) => {
     switch (prop.size) {
       case "large":

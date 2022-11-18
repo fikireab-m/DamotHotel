@@ -4,6 +4,7 @@ import { Card, CardFooter, CardActionBar, CardMedia } from "../components/Card";
 import { popularDishes } from "../data/popular";
 import { Button } from "../components/Buttons";
 import { motion } from "framer-motion";
+import { MdAddShoppingCart, MdShoppingBag } from "react-icons/md";
 
 const PopularDishes = () => {
   return (
@@ -14,7 +15,7 @@ const PopularDishes = () => {
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            viewport={{once:true}}
+            viewport={{ once: true }}
           >
             <Card key={index}>
               <CardMedia src={dish.image} />
@@ -26,7 +27,7 @@ const PopularDishes = () => {
                 <CardActionBar>
                   <div />
                   <Button variant="outlined" size="small">
-                    Order Now
+                    <MdAddShoppingCart /> Order Now
                   </Button>
                 </CardActionBar>
               </CardFooter>

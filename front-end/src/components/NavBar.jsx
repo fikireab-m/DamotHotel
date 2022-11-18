@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Spacer } from "./Spacer";
-import { MdClose, MdMenu } from "react-icons/md";
+import { MdClose, MdMenu, MdOutlineShoppingCart } from "react-icons/md";
 
 const Toolbar = styled.nav`
   border-radius: 1rem;
@@ -13,7 +13,6 @@ const Toolbar = styled.nav`
   justify-content: space-between;
   @media screen and (max-width: 600px) {
     padding: 1rem 1rem;
-    gap: 1rem;
   }
 `;
 
@@ -21,7 +20,7 @@ const MenuBar = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 660px) {
     display: none;
   }
 `;
@@ -33,7 +32,7 @@ const NavItem = styled.a`
   text-transform: capitalize;
   transition: all 0.5s;
   &:hover {
-    color: var(--primary);
+    color: var(--primaryLight);
     transform: scale(1.25);
   }
   /* &::after {
@@ -60,7 +59,6 @@ const Drawer = styled.div`
   top: 0;
   left: -40rem;
   width: 15rem;
-  padding-top: 1rem;
   z-index: 1000;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
@@ -69,21 +67,16 @@ const Drawer = styled.div`
   display: flex;
   flex-direction: column;
   transition: all 0.5s;
-  & > div + :not(:first-child) {
+  & > div {
     width: 100%;
     padding: 1rem;
     background-color: var(--black);
-    border-bottom: 1px solid var(--darkGrey);
+    border-top: 1px solid var(--darkGrey);
     &:hover {
       background-color: var(--black2);
       border-left: 0.2rem solid var(--primaryLight);
     }
   }
-`;
-const DrawerHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  background-color: var(--lightGrey);
 `;
 
 const IconButton = styled.button`
@@ -93,7 +86,7 @@ const IconButton = styled.button`
   color: var(--white);
   display: none;
   cursor: pointer;
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 660px) {
     display: block;
   }
 `;
@@ -111,7 +104,7 @@ const CloseButton = styled.button`
     display: block;
   }
 `;
-const navItems = ["Services", "Downlads", "Contact", "About"];
+const navItems = ["Services", "Booking", "Contact", "About"];
 
 const NavBar = () => {
   const onOpen = () => {
@@ -127,11 +120,9 @@ const NavBar = () => {
           <MdMenu size={"2rem"} />
         </IconButton>
         <Drawer id="drawer-containerxaioek">
-          <DrawerHeader>
-            <CloseButton onClick={onClose}>
-              <MdClose size={"2rem"} color="red" />
-            </CloseButton>
-          </DrawerHeader>
+          <CloseButton onClick={onClose}>
+            <MdClose size={"2rem"} color="red" />
+          </CloseButton>
           {navItems.map((item) => (
             <div>
               <NavItem key={item} href="">
@@ -152,6 +143,11 @@ const NavBar = () => {
               {item}
             </NavItem>
           ))}
+          <NavItem>
+            <h1 style={{ paddingLeft: "2rem" }}>
+              <MdOutlineShoppingCart />
+            </h1>
+          </NavItem>
         </MenuBar>
         <Spacer />
       </Toolbar>

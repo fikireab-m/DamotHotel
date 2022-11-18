@@ -17,7 +17,7 @@ export const Spacer = styled.div`
         `;
     }
   }}
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 660px) {
     display: none;
   }
 `;

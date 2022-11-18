@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div>
       <p>
-        Hotel Altis is located in the city centre, in Lisbon’s main business and
+        Damot Hotel is located in the city centre, in Lisbon’s main business and
         shopping district. This renovated 5 stars combines the art and tradition
         of hospitality with all the facilities and services of an international
         unit. 303 Rooms and suites with panoramic terrace, completely

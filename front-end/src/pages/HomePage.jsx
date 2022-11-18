@@ -9,12 +9,12 @@ import PopularDishes from "./PopularDishes";
 const HomePage = () => {
   return (
     <React.Fragment>
-      {/*<div>
+      <div>
         <RotatingCube primary="green"/>
         <RotatingCube primary="purple"/>
         <RotatingCube primary="red"/>
       </div>
-      */}
+     
        <Header />
       <PopularDishes />
       <BedRooms />

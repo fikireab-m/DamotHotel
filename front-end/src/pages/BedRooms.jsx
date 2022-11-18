@@ -18,7 +18,7 @@ const BedRooms = () => {
               <CardActionBar>
                 <div />
                 <Button variant="outlined" size="small">
-                  Order Now
+                  Book Now
                 </Button>
               </CardActionBar>
             </CardFooter>

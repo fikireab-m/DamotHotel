@@ -2,11 +2,11 @@ import React from "react";
 import NavBar from "./NavBar";
 import styled from "styled-components";
 import { Button } from "./Buttons";
+import { aboutHotel } from "../data/about";
 import { motion } from "framer-motion";
 
 const HeaderContainer = styled.div`
   height: 80vh;
-  width: 100vw;
   padding: 1rem 2rem;
   background: linear-gradient(to bottom, var(--lightGrey), var(--darkGrey));
   /* clip-path: path(
@@ -32,40 +32,80 @@ const HeaderContainer = styled.div`
   @media screen and (max-width: 600px) {
     padding: 1rem 1rem;
   }
+  @media screen and (max-height: 600px) {
+    height:100vh;
+  }
 `;
+
+// Content Box
 const Content = styled.div`
   width: 40%;
   height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  @media screen and (max-width: 1000px) {
+  align-items: left;
+
+  @media screen and (max-width: 996px) {
     width: 60%;
   }
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 895px) {
+    width: 65%;
+  }
+  @media screen and (max-width: 700px) {
     width: 80%;
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 400px) {
     width: 100%;
   }
 `;
+
+// Title Text
 const Title = styled.div`
+  border-left: 0.5rem solid var(--secondary);
   margin-left: -2rem;
-  border-left: 0.5rem solid var(--primary);
+  margin-bottom: 3rem;
   h1 {
-    padding-left: 2rem;
+    padding: 1rem 0 1rem 2rem;
     color: var(--primaryLight);
+    text-transform: capitalize;
     font-family: "Nova Flat", Courier, monospace;
-    margin-bottom: 3rem;
-  @media screen and (max-width: 600px) {
-    padding-left: 1rem;
+
+    @media screen and (max-width: 600px) {
+      padding-left: 1rem;
+      font-size:1.5rem;
+    }
+  }
+  h3,
+  p {
+    padding-left: 2rem;
+    color: var(--white1);
+  }
+  p {
+    line-height: 1.5;
+    font-size: 0.8rem;
+    a {
+      color: var(--primary);
+    font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.4s;
+      :hover {
+        border-bottom: 1px solid var(--primary);
+        font-weight: 600;
+        padding-bottom: 4px;
+      }
     }
   }
   @media screen and (max-width: 600px) {
-      margin-left: -1rem;
-    }
+    margin-left: -1rem;
+    margin-bottom: 1rem;
+  }
 `;
+
+/**
+ *
+ * @returns Header comes here
+ */
 const Header = () => {
   return (
     <HeaderContainer>
@@ -81,10 +121,15 @@ const Header = () => {
           >
             <div>
               <Title>
+                <h3>Damot Hotel</h3>
                 <h1>Make your travel confortabel.</h1>
+                <p>
+                  {aboutHotel.slice(0, 220) + "..."}
+                  <a href="">more</a>
+                </p>
               </Title>
             </div>
-            <Button variant="outlined" size="large">
+            <Button onClick={{}} variant="outlined" size="large">
               Book Now
             </Button>
           </motion.div>
